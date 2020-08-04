@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.b2wdigital</groupId>
+    <artifactId>fazemu-nfe</artifactId>
+    <version>1.0.0</version>
+    <packaging>war</packaging>
+    <name>FAZEMU NFe</name>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.3.RELEASE</version>
+    </parent>
+
+    <repositories>
+        <repository>
+            <id>ideais</id>
+            <url>http://nexus.b2w/content/repositories/ideais</url>
+        </repository>
+        <repository>
+            <id>thirdparty</id>
+            <url>http://nexus.b2w/content/repositories/thirdparty</url>
+        </repository>
+        <repository>
+            <id>internal</id>
+            <url>http://nexus.b2w/content/repositories/internal</url>
+        </repository>
+    </repositories>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <oracle.db.version>12.1.0.2</oracle.db.version>
+        <powermock.version>1.6.6</powermock.version>
+    </properties>
+
+    <dependencies>
+        <!-- tag::springws[] -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <!-- <scope>provided</scope> -->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-ldap</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>wsdl4j</groupId>
+            <artifactId>wsdl4j</artifactId>
+        </dependency>
+        <!-- end::springws[] -->
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>12.2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ucp</artifactId>
+            <version>12.2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ons</artifactId>
+            <version>${oracle.db.version}</version>
+        </dependency>
+        
+        <!-- Assinatura Digital -->
+        <dependency>
+            <groupId>com.b2wdigital.assinatura_digital</groupId>
+            <artifactId>AssinaturaDigital</artifactId>
+            <version>1.0</version>
+        </dependency>
+        
+        <!-- Fazemu Common -->
+        <dependency>
+            <groupId>com.b2wdigital.fazemu-common</groupId>
+            <artifactId>fazemu-common</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.3</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+        </dependency>
+        
+        <!-- itext -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.5.13</version>
+        </dependency>
+        
+        <!-- telegram -->
+		<dependency>
+		  <groupId>com.github.pengrad</groupId>
+		  <artifactId>java-telegram-bot-api</artifactId>
+		  <version>4.9.0</version>
+		</dependency>
+        <!-- telegram -->
+        
+        <!-- web -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>vue</artifactId>
+            <version>2.5.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>4.1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>font-awesome</artifactId>
+            <version>5.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootbox</artifactId>
+            <version>4.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>vkbeautify</artifactId>
+            <version>0.99.00.beta-1</version>
+        </dependency>
+		
+        <!-- Logback -->
+        <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+        </dependency>
+
+        <!-- Swagger -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        
+        <!-- Kafka -->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        
+        <!-- New Relic -->
+        <dependency>
+            <groupId>com.newrelic.agent.java</groupId>
+            <artifactId>newrelic-api</artifactId>
+            <version>4.9.0</version>
+        </dependency>
+        
+        <!-- Servicos Corporativos -->
+        <dependency>
+            <groupId>com.b2winc</groupId>
+            <artifactId>corporateservices-messages</artifactId>
+            <version>1.4.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-annotations</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.b2winc</groupId>
+            <artifactId>corporateservices-log</artifactId>
+            <version>1.0.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Impressao External CUPS -->
+        <dependency>
+            <groupId>com.hp.jipp</groupId>
+            <artifactId>jipp-core</artifactId>
+            <version>0.6.16</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.hp.jipp</groupId>
+            <artifactId>jipp-pdl</artifactId>
+            <version>0.6.16</version>
+            <type>pom</type>
+        </dependency>
+
+        <!-- test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- test -->
+        
+        <!-- validation -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator-annotation-processor</artifactId>
+        </dependency>
+        
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+		
+        <!-- modelmapper -->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>2.3.5</version>
+        </dependency>
+		
+        <!-- org.powermock -->
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>${powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-easymock</artifactId>
+            <version>${powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <targetPath>META-INF</targetPath>
+                <directory>src</directory>
+                <includes>
+                    <include>jax-ws-catalog.xml</include>
+                    <include>wsdl/**</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>about.properties</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>about.properties</exclude>
+                </excludes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.jvnet.jax-ws-commons</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>cadconsultacadastro4.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>br.inf.portalfiscal.nfe.wsdl.cadconsultacadastro4</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>META-INF/wsdl/cadconsultacadastro4.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/cadconsultacadastro4.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-cadconsultacadastro4</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>nfeautorizacao4.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>br.inf.portalfiscal.nfe.wsdl.nfeautorizacao4</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>META-INF/wsdl/nfeautorizacao4.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/nfeautorizacao4.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-nfeautorizacao4</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>nfeconsultaprotocolo4.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>br.inf.portalfiscal.nfe.wsdl.nfeconsultaprotocolo4</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>META-INF/wsdl/nfeconsultaprotocolo4.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/nfeconsultaprotocolo4.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-nfeconsultaprotocolo4</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>nfeinutilizacao4.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>br.inf.portalfiscal.nfe.wsdl.nfeinutilizacao4</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>META-INF/wsdl/nfeinutilizacao4.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/nfeinutilizacao4.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-nfeinutilizacao4</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>nferecepcaoevento4.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>br.inf.portalfiscal.nfe.wsdl.nferecepcaoevento4</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>META-INF/wsdl/nferecepcaoevento4.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/nferecepcaoevento4.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-nferecepcaoevento4</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>nferetautorizacao4.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>br.inf.portalfiscal.nfe.wsdl.nferetautorizacao4</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>META-INF/wsdl/nferetautorizacao4.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/nferetautorizacao4.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-nferetautorizacao4</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>nfestatusservico4.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>br.inf.portalfiscal.nfe.wsdl.nfestatusservico4</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>META-INF/wsdl/nfestatusservico4.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/nfestatusservico4.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-nfestatusservico4</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>nfedistribuicaodfe.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName>br.inf.portalfiscal.nfe.wsdl.nfedistribuicaodfe</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>META-INF/wsdl/nfedistribuicaodfe.wsdl</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/nfedistribuicaodfe.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-nfedistribuicaodfe</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>javax.xml</groupId>
+                        <artifactId>webservices-api</artifactId>
+                        <version>2.0</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <sourceDestDir>${project.build.directory}/generated-sources/jaxws-wsimport</sourceDestDir>
+                    <xnocompile>true</xnocompile>
+                    <verbose>true</verbose>
+                    <extension>true</extension>
+                    <catalog>${basedir}/src/jax-ws-catalog.xml</catalog>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <debug>true</debug>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId> 
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

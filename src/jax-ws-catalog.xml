@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/app/ComunicadorSEFAZ/src/main/java/com/b2wdigital/documentos_eletronicos/comunicador_sefaz/wsdl/v4/cadconsultacadastro4.wsdl" uri="wsdl/cadconsultacadastro4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/app/ComunicadorSEFAZ/src/main/java/com/b2wdigital/documentos_eletronicos/comunicador_sefaz/wsdl/v4/nfeautorizacao4.wsdl" uri="wsdl/nfeautorizacao4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/app/ComunicadorSEFAZ/src/main/java/com/b2wdigital/documentos_eletronicos/comunicador_sefaz/wsdl/v4/nfeconsultaprotocolo4.wsdl" uri="wsdl/nfeconsultaprotocolo4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/app/ComunicadorSEFAZ/src/main/java/com/b2wdigital/documentos_eletronicos/comunicador_sefaz/wsdl/v4/nfeinutilizacao4.wsdl" uri="wsdl/nfeinutilizacao4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/app/ComunicadorSEFAZ/src/main/java/com/b2wdigital/documentos_eletronicos/comunicador_sefaz/wsdl/v4/nferecepcaoevento4.wsdl" uri="wsdl/nferecepcaoevento4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/app/ComunicadorSEFAZ/src/main/java/com/b2wdigital/documentos_eletronicos/comunicador_sefaz/wsdl/v4/nferetautorizacao4.wsdl" uri="wsdl/nferetautorizacao4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/app/ComunicadorSEFAZ/src/main/java/com/b2wdigital/documentos_eletronicos/comunicador_sefaz/wsdl/v4/nfestatusservico4.wsdl" uri="wsdl/nfestatusservico4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/wsdl/4.0/cadconsultacadastro4.wsdl" uri="wsdl/cadconsultacadastro4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/wsdl/4.0/nfeautorizacao4.wsdl" uri="wsdl/nfeautorizacao4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/wsdl/4.0/nfeconsultaprotocolo4.wsdl" uri="wsdl/nfeconsultaprotocolo4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/wsdl/4.0/nfeinutilizacao4.wsdl" uri="wsdl/nfeinutilizacao4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/wsdl/4.0/nferecepcaoevento4.wsdl" uri="wsdl/nferecepcaoevento4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/wsdl/4.0/nferetautorizacao4.wsdl" uri="wsdl/nferetautorizacao4.wsdl"/>
+    <system systemId="file:/home/rodolpho/dev/documentos-eletronicos/wsdl/4.0/nfestatusservico4.wsdl" uri="wsdl/nfestatusservico4.wsdl"/>
+</catalog>

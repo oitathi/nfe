@@ -1,0 +1,164 @@
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe versao="4.00" Id="NFe35190205886614004476550460000001201194600043">
+        <ide>
+            <cUF>35</cUF>
+            <cNF>19460004</cNF>
+            <natOp>AG - Retorno Simb. VEnda</natOp>
+            <mod>55</mod>
+            <serie>46</serie>
+            <nNF>120</nNF>
+            <dhEmi>2019-02-06T12:49:00-02:00</dhEmi>
+            <dhSaiEnt>2019-02-06T12:49:00-02:00</dhSaiEnt>
+            <tpNF>1</tpNF>
+            <idDest>1</idDest>
+            <cMunFG>3522505</cMunFG>
+            <tpImp>1</tpImp>
+            <tpEmis>1</tpEmis>
+            <cDV>3</cDV>
+            <tpAmb>2</tpAmb>
+            <finNFe>1</finNFe>
+            <indFinal>0</indFinal>
+            <indPres>9</indPres>
+            <procEmi>0</procEmi>
+            <verProc>SVBOX_ELDOC</verProc>
+        </ide>
+        <emit>
+            <CNPJ>05886614004476</CNPJ>
+            <xNome>DIRECT EXPRESS LOGISTICA INTEGRADA S/A</xNome>
+            <enderEmit>
+                <xLgr>EST ALDEIA DA SERRA</xLgr>
+                <nro>555</nro>
+                <xCpl>DOCAS 19 A 47</xCpl>
+                <xBairro>Ingahi</xBairro>
+                <cMun>3522505</cMun>
+                <xMun>Itapevi</xMun>
+                <UF>SP</UF>
+                <CEP>06696050</CEP>
+                <cPais>1058</cPais>
+                <xPais>BRASIL</xPais>
+            </enderEmit>
+            <IE>373150120112</IE>
+            <CRT>3</CRT>
+        </emit>
+        <dest>
+            <CNPJ>08148360000147</CNPJ>
+            <xNome>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome>
+            <enderDest>
+                <xLgr>RUA FREI DURAO</xLgr>
+                <nro>062</nro>
+                <xBairro>IPIRANGA</xBairro>
+                <cMun>3550308</cMun>
+                <xMun>Sao Paulo</xMun>
+                <UF>SP</UF>
+                <CEP>04274000</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+            </enderDest>
+            <indIEDest>1</indIEDest>
+            <IE>147733798115</IE>
+        </dest>
+        <entrega>
+            <CPF>33160346846</CPF>
+            <xLgr>RUA SINHAZINHA LISBOA</xLgr>
+            <nro>90</nro>
+            <xBairro>SAO VICENTE</xBairro>
+            <cMun>3132404</cMun>
+            <xMun>Itajuba</xMun>
+            <UF>MG</UF>
+        </entrega>
+        <det nItem="1">
+            <prod>
+                <cProd>SM10001</cProd>
+                <cEAN>7730536287066</cEAN>
+                <xProd>PS4 - ZUMBI ARMY= TRILOGY</xProd>
+                <NCM>85234990</NCM>
+                <CFOP>5907</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1</qCom>
+                <vUnCom>19.0000</vUnCom>
+                <vProd>19.00</vProd>
+                <cEANTrib>7730536287066</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1</qTrib>
+                <vUnTrib>19.0000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <vTotTrib>6.54</vTotTrib>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>40</CST>
+                    </ICMS40>
+                </ICMS>
+                <PIS>
+                    <PISOutr>
+                        <CST>49</CST>
+                        <qBCProd>1.0000</qBCProd>
+                        <vAliqProd>0.0000</vAliqProd>
+                        <vPIS>0.00</vPIS>
+                    </PISOutr>
+                </PIS>
+                <COFINS>
+                    <COFINSOutr>
+                        <CST>49</CST>
+                        <qBCProd>1.0000</qBCProd>
+                        <vAliqProd>0.0000</vAliqProd>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSOutr>
+                </COFINS>
+            </imposto>
+        </det>
+        <total>
+            <ICMSTot>
+                <vBC>0.00</vBC>
+                <vICMS>0.00</vICMS>
+                <vICMSDeson>0.00</vICMSDeson>
+                <vFCP>0.00</vFCP>
+                <vBCST>0.00</vBCST>
+                <vST>0.00</vST>
+                <vFCPST>0.00</vFCPST>
+                <vFCPSTRet>0.00</vFCPSTRet>
+                <vProd>19.00</vProd>
+                <vFrete>0.00</vFrete>
+                <vSeg>0.00</vSeg>
+                <vDesc>0.00</vDesc>
+                <vII>0.00</vII>
+                <vIPI>0.00</vIPI>
+                <vIPIDevol>0.00</vIPIDevol>
+                <vPIS>0.00</vPIS>
+                <vCOFINS>0.00</vCOFINS>
+                <vOutro>0.00</vOutro>
+                <vNF>19.00</vNF>
+                <vTotTrib>6.54</vTotTrib>
+            </ICMSTot>
+        </total>
+        <transp>
+            <modFrete>0</modFrete>
+            <vol>
+                <qVol>1</qVol>
+                <esp>VOLS</esp>
+                <pesoL>0.080</pesoL>
+                <pesoB>0.080</pesoB>
+            </vol>
+        </transp>
+        <pag>
+            <detPag>
+                <tPag>90</tPag>
+                <vPag>0.00</vPag>
+            </detPag>
+        </pag>
+        <infAdic>
+            <infCpl>Nao incidencia de ICMS conforme inciso III, art. 7 do RICMS SP, aprovado pelo Decreto 45.490/2000. NF do Depositante para destinatario 8799-5 Emit. 8148360000147 de 08/10/18 NF Remessa Depositante 1917-7 de 19/10/17</infCpl>
+            <obsCont xCampo="DevCO">
+                <xTexto>FATURA</xTexto>
+            </obsCont>
+            <obsCont xCampo="SiglaERP">
+                <xTexto>UMBRELLA</xTexto>
+            </obsCont>
+            <obsCont xCampo="Logo">
+                <xTexto>DIRECT</xTexto>
+            </obsCont>
+        </infAdic>
+    </infNFe>
+</NFe>

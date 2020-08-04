@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<configuration>
+	<if condition='isNull("LOG_PATH")'>
+		<then><property name="LOG_PATH" value="/opt/logs/fazemu-nfe" /></then>
+	</if>
+	
+	<!-- Podemos configurar para o padrao -->
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+	    <layout class="ch.qos.logback.classic.PatternLayout">
+	      <pattern>[%d{"yyyy-MM-dd'T'HH:mm:ss.SSSZ", America/Sao_Paulo}] [${HOSTNAME}] [%thread] %level [%logger{36}] - %msg%n</pattern>
+	    </layout>
+	</appender>
+
+	<if condition='!isDefined("LOG_FILE") || property("LOG_FILE").equals("true")'>
+		<then>
+			<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+				<file>${LOG_PATH}/fazemu-nfe.log</file>
+				<param name="StaticLogFileName" value="false"/>
+				
+				<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+					<layout class="com.b2winc.corpserv.log.controller.json.LogbackLayoutJson" />
+				</encoder>
+		
+				<!-- logstash aceita arquivos com tamanhos de 100mb a 500mba  -->
+				<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+					<fileNamePattern>${LOG_PATH}/fazemu-nfe.log.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+					<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+						<maxFileSize>256MB</maxFileSize>
+					</timeBasedFileNamingAndTriggeringPolicy>
+					<maxHistory>10</maxHistory>
+				</rollingPolicy>
+			</appender>
+			
+			<root level="stdout">
+				<appender-ref ref="file" />
+			</root>
+		</then>
+		<else>
+			<root level="stdout">
+				<appender-ref ref="stdout" />
+			</root>
+		</else>
+	</if>
+
+	<root level="debug">
+		<appender-ref ref="stdout" />
+	</root>
+
+	<root level="warn">
+		<appender-ref ref="stdout" />
+	</root>
+	
+	<logger name="org.springframework" level="INFO" />
+	<logger name="org.apache" level="INFO" />
+	<logger name="com.b2wdigital" level="INFO" />
+	
+</configuration>
